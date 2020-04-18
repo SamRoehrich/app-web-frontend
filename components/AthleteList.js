@@ -2,9 +2,26 @@ import styled from 'styled-components'
 import { useQuery } from 'react-apollo'
 import { ATHLETE_LIST_QUERY } from '../lib/querys'
 
-const AthleteList = () => {
-    const { data, loading } = useQuery(ATHLETE_LIST_QUERY)
+import AthleteListItem from './AthleteListItem'
 
-    return <p>athleteList</p>
+const Container = styled.div`
+    height: 50%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+`
+
+//gets athletes from parent component
+const AthleteList = ({athletes}) => {
+    return (
+        <Container>
+            {
+                athletes.map(athlete => (
+                    <AthleteListItem athlete={athlete} />
+                ))
+            }
+        </Container>
+    )
 }
 
+export default AthleteList
