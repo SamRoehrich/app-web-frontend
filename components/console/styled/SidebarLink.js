@@ -16,8 +16,9 @@ const SidebarLink = ({ children, href }) => {
         align-items: center;
         cursor: pointer;
         font-size: 20px;
-        background-color: ${ active ? 'blue' : 'green' };
-        color: ${ active ? 'white' : 'black'};
+        background-color: ${ active ? '#00203AAA' : '#00203FFF' };
+        color: ${ active ? 'papayawhip' : 'violet'};
+        text-decoration: none;
     `;
 
 

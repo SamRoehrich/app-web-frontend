@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const ListItem = styled.li`
-    width: 100%;
+    width: 50%;
     height: 10vh;
     padding: 3px;
     color: black;

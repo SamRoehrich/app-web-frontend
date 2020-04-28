@@ -36,7 +36,6 @@ const AthleteStatsAndWorkout = () => {
             {
                 activeView == 'STATS' ? <AthleteStats /> : <AthleteWorkouts />
             }
-            {/* <AthleteStats /> */}
         </Container>
     )
 }

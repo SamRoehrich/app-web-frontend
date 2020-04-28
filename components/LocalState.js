@@ -21,6 +21,7 @@ function LocalState({children}) {
         setSelectedWorkout(workout)
     }
 
+
     const defaultValues = {
         selectedAthlete,
         setAthlete,

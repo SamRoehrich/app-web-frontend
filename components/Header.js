@@ -11,6 +11,7 @@ const HeaderContainer = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    background-color: #00203FFF;
 `
 
 const Header = () => {

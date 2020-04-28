@@ -1,10 +1,13 @@
 import styled from 'styled-components'
+import Link from 'next/link'
 
 import { useLocalState } from './LocalState'
 
 import AthleteComputedDetails from './AthleteComputedDetails'
 import AthleteStatsAndWorkouts from './AthleteStatsAndWorkouts'
 import PrimaryText from './styled/PrimaryText'
+import Button from './styled/Button'
+import AthleteRecentActivity from './AthleteRecentActivity'
 
 const Container = styled.div`
     height: 100%;
@@ -33,6 +36,8 @@ const AthleteInfo = () => {
 
     if( selectedAthlete === '' ) return <Container />
 
+    console.log(selectedAthlete)
+
     if( selectedAthlete ) return (
         
         <Container>
@@ -40,12 +45,13 @@ const AthleteInfo = () => {
                 <AthleteName>
                     {selectedAthlete.user.fullName}
                 </AthleteName>
-                <PrimaryText>
-                    Edit Athlete
-                </PrimaryText>
+                <Link href="/athlete/[id]/" as={`/athlete/${selectedAthlete.id}/`}>
+                    <a>Edit Athlete</a>
+                </Link>
             </Row>
             <AthleteComputedDetails />
-            <AthleteStatsAndWorkouts />
+            <AthleteRecentActivity />
+            {/* <AthleteStatsAndWorkouts /> */}
         </Container>
     )
 }

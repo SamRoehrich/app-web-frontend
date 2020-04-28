@@ -9,7 +9,7 @@ import {useLocalState} from '../LocalState'
 import SidebarLink from './styled/SidebarLink'
 
 const Container = styled.div`
-    background-color: red;
+    background-color: #00203FFF;
     height: 100%;
     width: 14%;
     display: flex;

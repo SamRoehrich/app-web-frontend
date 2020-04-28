@@ -4,4 +4,4 @@ const Button = styled.button`
     color: ${({ theme }) => theme.colors.primary}
 `
 
-export default Button
+export default Button 

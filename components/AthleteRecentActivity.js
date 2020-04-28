@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import { useLocalState } from './LocalState'
+
 import PrimaryText from './styled/PrimaryText'
 import SecondaryText from './styled/SecondaryText'
 
@@ -31,17 +33,29 @@ const DateText = styled.p`
 
 const AthleteRecentActivity = () => {
 
+    const { selectedAthlete } = useLocalState()
+
+    //map over logBook and create a new element for 
+    //every item in the array
+
+    const { logBook } = selectedAthlete
+
+    const items = logBook.map(item => (
+        <ActivityItem>
+            <WorkoutText>
+                {item.workout.title}
+            </WorkoutText>
+            <DateText>
+                {item.createdAt}
+            </DateText>
+        </ActivityItem>
+    ))
+    
+    console.log(items)
+    
     return (
         <Container>
-            <ActivityItem>
-                <WorkoutText>
-                    workout title
-                </WorkoutText>
-                <DateText>
-                    completed at date
-                </DateText>
-            </ActivityItem>
-
+            {items.slice(0,5)}
         </Container>
     )
 }
